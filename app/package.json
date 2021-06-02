@@ -1,0 +1,27 @@
+{
+  "name": "openjs-world-2021",
+  "version": "1.0.0",
+  "description": "test app for openjs world 2021 talk",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 start index.js",
+    "restart": "pm2 restart all",
+    "stop": "pm2 stop all",
+    "load": "autocannon",
+    "report": "autocannon-reporter",
+    "baseline-load": "npm run load -- -w 5 -d 12800 -c 100 -R 800 http://localhost:8080/echo"
+  },
+  "author": "gui.hermeto@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "got": "^11.8.2",
+    "prom-client": "^13.1.0",
+    "restify": "^8.5.1",
+    "slonik": "^23.6.4"
+  },
+  "devDependencies": {
+    "pm2": "^4.5.6",
+    "autocannon": "^7.3.0",
+    "autocannon-reporter": "^1.1.0"
+  }
+}
